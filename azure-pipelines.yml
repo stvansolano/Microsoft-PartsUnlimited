@@ -32,11 +32,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectedServiceName: ''
-    WebAppName: 
-    Package: '$(build.artifactstagingdirectory)/*.zip'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
