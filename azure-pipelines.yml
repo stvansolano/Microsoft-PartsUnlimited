@@ -38,5 +38,5 @@ steps:
     azureSubscription: 'Visual Studio Enterprise (MVP)(befb29ee-67e7-4051-91d1-9d487ce235c0)'
     appType: 'webApp'
     appName: 'parts-unlimited-demo'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(build.artifactStagingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
