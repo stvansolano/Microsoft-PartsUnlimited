@@ -24,7 +24,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -33,10 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Visual Studio Enterprise (MVP)(befb29ee-67e7-4051-91d1-9d487ce235c0)'
     appType: 'webApp'
-    appName: 'parts-unlimited-demo'
-    package: '$(build.artifactStagingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
+    WebAppName: 'parts-unlimited-demo'
+    packageForLinux: '$(build.artifactStagingDirectory)/**/*.zip'"
