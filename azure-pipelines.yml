@@ -39,4 +39,4 @@ steps:
     azureSubscription: 'Visual Studio Enterprise (MVP)(befb29ee-67e7-4051-91d1-9d487ce235c0)'
     appType: 'webApp'
     WebAppName: 'parts-unlimited-demo'
-    packageForLinux: '$(build.artifactStagingDirectory)/**/*.zip'"
+    packageForLinux: '$(build.artifactStagingDirectory)/**/*.zip'
