@@ -33,10 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: '$(azureSubscription)'
+    azureSubscription: 'Visual Studio Enterprise (MVP)(befb29ee-67e7-4051-91d1-9d487ce235c0)'
     appType: 'webApp'
-    WebAppName: 'parts-unlimited-demo'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    appName: 'parts-unlimited-demo'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
